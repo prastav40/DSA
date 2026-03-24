@@ -1,0 +1,84 @@
+Deep Dive: Time ComplexityWhat is it?Time complexity is not the number of seconds a program takes to run.
+           It is the number of operations an algorithm performs relative to the size of the input (n).
+
+           
+# ⏱️ Time Complexity Revision Notes
+
+## 1. What is Time Complexity?
+It is **not** the time in seconds. It is the **number of operations** an algorithm performs as the input size ($n$) grows. 
+
+---
+
+## 2. The Big O Hierarchy (Fastest to Slowest)
+1. **O(1) - Constant:** The fastest. Time stays the same regardless of data size.
+2. **O(log n) - Logarithmic:** Extremely fast. Data is cut in half every step (e.g., Binary Search).
+3. **O(n) - Linear:** Work grows at the same rate as data (e.g., a single for-loop).
+4. **O(n log n) - Linearithmic:** The standard for efficient sorting (e.g., Merge Sort).
+5. **O(n²) - Quadratic:** Slow. Usually caused by nested loops (a loop inside a loop).
+6. **O(2ⁿ) - Exponential:** Very slow. Work doubles with every new element (e.g., simple Recursion).
+
+---
+
+## 3. Code Examples for Revision
+
+### O(1) - Constant Time
+```javascript
+function getFirstItem(arr) {
+    return arr[0]; // Only 1 operation
+}
+
+O(n) - Linear Time
+function printAll(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]); // Runs 'n' times
+    }
+}
+
+Gemini said
+You can copy and paste the text below directly into a file named TIME_COMPLEXITY.md in VS Code. This format uses Markdown, which GitHub will automatically turn into a clean, professional-looking document.
+
+Markdown
+# ⏱️ Time Complexity Revision Notes
+
+## 1. What is Time Complexity?
+It is **not** the time in seconds. It is the **number of operations** an algorithm performs as the input size ($n$) grows. 
+
+---
+
+## 2. The Big O Hierarchy (Fastest to Slowest)
+1. **O(1) - Constant:** The fastest. Time stays the same regardless of data size.
+2. **O(log n) - Logarithmic:** Extremely fast. Data is cut in half every step (e.g., Binary Search).
+3. **O(n) - Linear:** Work grows at the same rate as data (e.g., a single for-loop).
+4. **O(n log n) - Linearithmic:** The standard for efficient sorting (e.g., Merge Sort).
+5. **O(n²) - Quadratic:** Slow. Usually caused by nested loops (a loop inside a loop).
+6. **O(2ⁿ) - Exponential:** Very slow. Work doubles with every new element (e.g., simple Recursion).
+
+---
+
+## 3. Code Examples for Revision
+
+### O(1) - Constant Time
+```javascript
+function getFirstItem(arr) {
+    return arr[0]; // Only 1 operation
+}
+O(n) - Linear Time
+JavaScript
+function printAll(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]); // Runs 'n' times
+    }
+}
+O(n²) - Quadratic Time
+
+function printPairs(arr) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            console.log(arr[i], arr[j]); // Runs n * n times
+        }
+    }
+}
+
+5. Rules of Calculation
+Worst Case is King: We always assume the worst possible scenario (e.g., the target is the last item in the list).
+Drop Constants: $O(2n)$ becomes $O(n)$. $O(500)$ becomes $O(1)$.Drop Non-Dominant Terms: $O(n² + n)$ becomes $O(n²)$ because $n$ becomes irrelevant at scale.
