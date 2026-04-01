@@ -1,5 +1,4 @@
 var maxProfit = function(prices) {
-    // Validation: If there's 1 or 0 days, no profit can be made
     if (!prices || prices.length < 2) {
         return 0;
     }
